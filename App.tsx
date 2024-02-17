@@ -7,7 +7,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ActivityIndicator, View } from 'react-native'; 
 
 const Tab = createBottomTabNavigator();
-const App = () => {
+
+function App() {
 
   const[loading, setLoading] = useState(true)
 

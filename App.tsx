@@ -10,13 +10,7 @@ const Tab = createBottomTabNavigator();
 const App = () => {
 
   const[loading, setLoading] = useState(true)
-  // if(loading){
-  //   return(
-  //     <View style = {{justifyContent: 'center', flex: 1}}>
-  //       <ActivityIndicator size={"large"} color={'blue'}/>
-  //     </View>
-  //   )
-  // }
+
   return (
     <NavigationContainer>
       <Tab.Navigator>

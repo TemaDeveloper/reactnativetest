@@ -5,12 +5,7 @@ import ListItem from './components/ListItem';
 
 
 const NonCocktailsAlcForm = (cocktailsData) => {
-const renderItem = ({item}) => (
-  <ListItem
-    type = {item.cocktails[0].main}
-    strDrink = {item.strDrink}
-  />
-)
+
 
 const DATA = [
   {
@@ -22,7 +17,7 @@ const DATA = [
     type: "Nonalchoholic"
   },
   {
-    strDrink: "Cocktail 1", 
+    strDrink: "Cocktail 3", 
     type: "Nonalchoholic"
   }
 ];
@@ -33,7 +28,7 @@ return (
 
         <FlatList 
           data = {DATA}
-          renderItem={renderItem}
+          renderItem={({item}) => <Item title={item.strDrink} />}
           keyExtractor={(item) => item.strDrink}/>
     
     </View>
@@ -42,7 +37,14 @@ return (
 
 }
 
-export default NonCocktailsAlcForm;
+
+type ItemProps = {title: string};
+
+const Item = ({title}: ItemProps) => (
+  <View style={styles.item}>
+    <Text style={{fontSize: 20}}>{title}</Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
     container: {
@@ -53,5 +55,12 @@ const styles = StyleSheet.create({
         color: 'red',
         marginTop: 20
       },
+    item: {
+      justifyContent: 'center',
+      backgroundColor: 'blue',
+      margin: 10
+    }
 });
+
+export default NonCocktailsAlcForm;
 
